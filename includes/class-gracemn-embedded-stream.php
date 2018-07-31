@@ -114,12 +114,23 @@ class GraceMN_Embedded_Stream {
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
 
         // Custom action to display YouTube frame upon form submit
-		add_action( 'wp_footer', 'show_embed_frame' );
+        add_action( 'wp_footer', array( $this, 'show_embed_frame' ), 0 );
+		//add_action( 'wp_footer', 'show_embed_frame' );
 		 
-		function show_embed_frame() {
 			dd($this->settings);
-			$embed_code = '';
-			echo <<<EOT
+ 
+	} // End __construct ()
+
+	/**
+	 * Load embed frame after form submission
+	 * @access  public
+	 * @since   1.0.0
+	 * @return void
+	 */
+    function show_embed_frame() {
+        dd($this->settings);
+        $embed_code = '';
+        echo <<<EOT
 <script type="text/javascript">
 document.addEventListener( 'wpcf7submit', function( event ) {
 	if ( '3220' == event.detail.contactFormId ) {
@@ -131,9 +142,7 @@ document.addEventListener( 'wpcf7submit', function( event ) {
 }, false );
 </script>
 EOT;
-		}
- 
-	} // End __construct ()
+    }
 
 	/**
 	 * Load frontend CSS.
