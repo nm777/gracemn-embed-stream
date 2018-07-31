@@ -115,7 +115,7 @@ class GraceMN_Embedded_Stream_Settings {
 					'id' 			=> 'embed_field',
 					'label'			=> __( 'Embed Code' , 'gracemn-embedded-stream' ),
 					'description'	=> __( 'The embedding code for the stream.', 'gracemn-embedded-stream' ),
-					'type'			=> 'text',
+					'type'			=> 'textarea',
 					'default'		=> '<iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=UC0V4Svo0j36EYquUjHOqX0g" frameborder="0" allowfullscreen></iframe>',
 					'placeholder'	=> __( 'Embed code', 'gracemn-embedded-stream' )
 				)
