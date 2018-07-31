@@ -67,7 +67,7 @@ class GraceMN_Embedded_Stream_Settings {
 	 * @return void
 	 */
 	public function add_menu_item () {
-		$page = add_options_page( __( 'Plugin Settings', 'gracemn-embedded-stream' ) , __( 'Plugin Settings', 'gracemn-embedded-stream' ) , 'manage_options' , $this->parent->_token . '_settings' ,  array( $this, 'settings_page' ) );
+		$page = add_options_page( __( 'Embedded Stream', 'gracemn-embedded-stream' ) , __( 'Embedded Stream', 'gracemn-embedded-stream' ) , 'manage_options' , $this->parent->_token . '_settings' ,  array( $this, 'settings_page' ) );
 		add_action( 'admin_print_styles-' . $page, array( $this, 'settings_assets' ) );
 	}
 
@@ -185,7 +185,7 @@ class GraceMN_Embedded_Stream_Settings {
 
 		// Build page HTML
 		$html = '<div class="wrap" id="' . $this->parent->_token . '_settings">' . "\n";
-			$html .= '<h2>' . __( 'Plugin Settings' , 'gracemn-embedded-stream' ) . '</h2>' . "\n";
+			$html .= '<h2>' . __( 'Embedded Stream' , 'gracemn-embedded-stream' ) . '</h2>' . "\n";
 
 			$tab = '';
 			if ( isset( $_GET['tab'] ) && $_GET['tab'] ) {
