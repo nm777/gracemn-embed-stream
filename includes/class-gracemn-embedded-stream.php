@@ -126,6 +126,11 @@ class GraceMN_Embedded_Stream {
 	 */
     function show_embed_frame() {
         $embed_code = get_option('wpt_embed_field');
+
+        // Replace single quotes with their HTML entity and remove all carriage returns
+        $embed_code = str_replace("'", '&#39;', $embed_code);
+        $embed_code = str_replace(["\r", "\n"], '', $embed_code);
+
         echo <<<EOT
 <script type="text/javascript">
 document.addEventListener( 'wpcf7submit', function( event ) {
